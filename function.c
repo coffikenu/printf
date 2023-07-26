@@ -94,7 +94,10 @@ int print_percent(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-	return (write_number(is_negative, i, buffer, flags, width, precision, size));
+	return (write(1, "%%", 1));
+}
+
+/************************* PRINT INT *************************/
 /**
  * print_int - Print int
  * @types: Lista of arguments
@@ -138,6 +141,7 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
+/************************* PRINT BINARY *************************/
 /**
  * print_binary - Prints an unsigned number
  * @types: Lista of arguments
